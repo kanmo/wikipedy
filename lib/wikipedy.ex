@@ -37,9 +37,4 @@ defmodule Wikipedy do
     opts = [strategy: :one_for_one, name: {:global, Wikipedy.Supervisor}]
     Supervisor.start_link(children, opts)
   end
-
-  def today_topic do
-    Wikipedy.Server.today_topic
-  end
-
 end

@@ -15,7 +15,7 @@ defmodule Wikipedy.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger],
+    [extra_applications: [:logger, :httpoison],
      mod: {Wikipedy, []}]
   end
 
@@ -29,6 +29,10 @@ defmodule Wikipedy.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:httpoison, "~> 0.9.0"},
+      {:floki, "~> 0.10.0"},
+      {:distillery, ">= 0.8.0", warn_missing: false},
+    ]
   end
 end
